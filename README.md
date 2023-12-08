@@ -23,7 +23,7 @@ The Backend of the application is built on the C# platform using the .NET Core f
 ## Getting Started
 1. Clone Repository:
    
-  git clone https://github.com/your-username/Crossplatform-SellingOnlineCourse.git
+  git clone https://github.com/huynguyen1110/SellingOnlineCourse.git
 
 2. Install Backend:
 
