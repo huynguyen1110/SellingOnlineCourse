@@ -1,5 +1,4 @@
 # Crossplatfrom SellingOnlineCourse Application
-Welcome to the "Crossplatform SellingOnlineCourse Application" project! This is a professional application designed to help you effortlessly sell online courses across multiple platforms.
 
 ## Introduction
 
