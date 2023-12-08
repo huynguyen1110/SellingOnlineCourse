@@ -1,0 +1,9 @@
+export const MAC_DINH = "MAC_DINH"
+export const HOC_NHIEU = "HOC_NHIEU";
+export const DANH_GIA_CA0 = "DANH_GIA_CA0";
+export const MOI_NHAT = "MOI_NHAT";
+export const GIA_CAO_DEN_THAP = "GIA_CAO_DEN_THAP";
+export const GIA_THAP_DEN_CAO = "GIA_THAP_DEN_CAO";
+export const _5_SAO = "_5_SAO";
+export const TU_4_SAO = "TU_4_SAO";
+export const TU_3_SAO = "TU_3_SAO";
