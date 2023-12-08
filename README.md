@@ -35,9 +35,9 @@ The Backend of the application is built on the C# platform using the .NET Core f
 
 - Navigate to the frontend folder and run:
    
-npm install
+    npm install
 
-npx react-native run-android # or run-ios for iOS
+    npx react-native run-android # or run-ios for iOS
 
 4. Start Using:
 
