@@ -10,7 +10,7 @@ namespace SellingCourses.Common
         {
             _configuration = configuration;
         }
-        public void SendEmail(string _to, string _subject, string _body)
+        public void SendEmail(string _to, string _subject, string)
         {
             using (var smtpClient = new SmtpClient(_configuration["MailSettings:Hosting"]))
             {
@@ -22,7 +22,7 @@ namespace SellingCourses.Common
                 // Create a MailMessage object
                 var message = new MailMessage
                 {
-                    From = new MailAddress(_configuration["MailSettings:SendFrom"], "Hệ thống khóa học Uniedu"),
+                    From = new  (_configuration["MailSettings:SendFrom"], "Hệ thống khóa học Uniedu"),
                     Subject = _subject,
                     Body = _body,
                     IsBodyHtml = true

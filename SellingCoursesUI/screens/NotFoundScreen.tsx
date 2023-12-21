@@ -18,7 +18,7 @@ import HeaderSearch from "../components/header/HeaderSearch";
 
 const NotFoundScreen = ( {navigation} : {navigation: any} ) => {
     return (
-        <SafeAreaView style={[stylecss.container]} >
+        <SafeAreaView style={[styles.container]} >
             <HeaderSearch/>
             <View style={stylecss.mainContainer}>
                 <Image style={stylecss.image} source={require('../assets/404.png')} />

@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿      using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using SellingCourses.Common;
 using SellingCourses.Dtos.BaiHoc;
@@ -37,15 +37,12 @@ namespace SellingCourses.Services.Implements
                 baiHocQuery = baiHocQuery.Where(bh => bh.TenBaiHoc.Contains(filter.Keyword));
             }
 
-            // Sắp xếp bài học theo tên (hoặc theo yêu cầu của bạn)
             baiHocQuery = baiHocQuery.OrderBy(bh => bh.TenBaiHoc);
 
             var totalItems = await baiHocQuery.CountAsync();
 
-            // Tính số trang dựa trên pageSize và số lượng mục
             int totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
 
-            // Kiểm tra xem có lấy các mục trên trang này hay không
             if (pageNumber <= totalPages)
             {
                 int skip = (pageNumber - 1) * pageSize;
@@ -53,7 +50,7 @@ namespace SellingCourses.Services.Implements
             }
             else
             {
-                baiHocQuery = baiHocQuery.Skip(0).Take(0); // Trả về danh sách trống nếu vượt quá số trang có sẵn.
+                baiHocQuery = baiHocQuery.Skip(0).Take(0);
             }
 
             var baiHocList = await baiHocQuery.ToListAsync();
@@ -65,25 +62,6 @@ namespace SellingCourses.Services.Implements
             return result;
         }
 
-
-
-        /* public async Task<List<GetBaiHocDto>> GetBaiHocAsync(BaiHocFilterDto filter)
-        {
-            var baiHocQuery = _dbContext.BaiHocs.AsNoTracking().Where(bh => !bh.Deleted);
-
-            if (!string.IsNullOrEmpty(filter.Keyword))
-            {
-                baiHocQuery = baiHocQuery.Where(bh => bh.TenBaiHoc.Contains(filter.Keyword));
-            }
-
-            
-            baiHocQuery = baiHocQuery.OrderBy(bh => bh.TenBaiHoc);
-
-            var baiHocList = await baiHocQuery.ToListAsync();
-            var baiHocDtoList = _mapper.Map<List<GetBaiHocDto>>(baiHocList);
-
-            return baiHocDtoList;
-        }*/
 
         public async Task<BaiHoc> CreateBaiHocAsync(CreateBaiHocDto createBaiHocDto)
         {
@@ -127,7 +105,7 @@ namespace SellingCourses.Services.Implements
 
             if (baiHoc == null)
             {
-                return null; // Hoặc có thể throw một ngoại lệ NotFoundException
+                return null;
             }
 
             var baiHocDto = _mapper.Map<GetBaiHocDto>(baiHoc);

@@ -32,6 +32,7 @@ const LessonScreen = () => {
     const [index, setIndex] = useState<number>(0);
     const [isMenu, setIsMenu] = useState<boolean>(false);
     var id = router.params.khoaHocId;
+
     const getCourses = async () => {
         try {
           const response = await getCoursesRegistered()
@@ -88,12 +89,13 @@ const LessonScreen = () => {
   
     return (
         <SafeAreaView style={[styles.container]} >
-            <View style={styles.container}>
+            <View  style={[styles.secondary_container]}>
                 <HeaderLesson nameCourses={router.params.tenKhoaHoc} />
                 <View>
                     <VideoComponent src={lesson[index]?.noiDung}></VideoComponent>
+
                 </View>
-                {isMenu ? <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white', width: '100%', height: '100%', position: 'absolute', zIndex: 30}}>
+                {isMenu ? <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white', width: '100%', height: '100%', position: 'absolute', zIndex: 50}}>
                     <TouchableOpacity onPress={() => menuAction()} style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end'}}>
                         <Svg style={{height: 25, width: 25, marginHorizontal: 10, marginTop: 10}} viewBox="0 0 384 512">
                             <Path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
@@ -170,9 +172,7 @@ const courseDetailStyles = StyleSheet.create({
         height: 27,
         borderRadius: 5,
         alignItems: 'center',
-        justifyContent: 'center',
-        // marginLeft: 90,
-        // marginTop: 5
+        justifyContent: 'center'
     },
     intro: {
         flexDirection: 'row',
